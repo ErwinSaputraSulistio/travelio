@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import Button from "../diminutive/Button"
 // REDUX
@@ -7,6 +8,7 @@ import { searchBook } from "../../features/userSlice"
 
 export default function Navbar() {
    const dispatch = useDispatch()
+   const navigate = useNavigate()
    const [showSearch, switchSearch] = useState(false)
    const triggerSwitch = () => {
       switchSearch(!showSearch)
@@ -23,10 +25,12 @@ export default function Navbar() {
       <div className="navbar">
          <div>
             <Button
+               func={ () => { navigate("/home") } }
                margin="1.5vw 1.5vw 1.5vw 3vw"
                name="Home"
             />
             <Button
+               func={ () => { navigate("/bookmark") } }
                margin="1.5vw" 
                name="My Bookmark"
             />

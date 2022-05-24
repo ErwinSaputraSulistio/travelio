@@ -18,7 +18,7 @@ button, .createUsername, .searchLogo {
    border: none;
    transition: 0.25s;
 }
-button:hover, .createUsername:hover, .searchLogo:hover {
+button:hover, .createUsername:hover, .searchLogo:hover, .bookResultCover:hover, .bookCloseButton:hover {
    cursor: pointer;
    opacity: 0.5;
 }
@@ -124,4 +124,67 @@ input:focus {
 .createUsername {
    color: #6379F4;
    font-weight: bold;
+}
+
+// HOME
+.bookResultRow {
+   @include custom-flex(row, center, center);
+   margin: 2.5vw 0;
+   width: 100%;
+}
+.bookResultBorder {
+   @include custom-flex(column, center, center);
+   border: 1px solid #414141;
+   border-radius: 0.5vw;
+   height: 15vw;
+   margin: 0 2.5vw;
+   width: 12vw;
+}
+.bookResultCover {
+   height: 80%;
+   padding: 1vw;
+   transition: 0.25s;
+   width: 80%;
+}
+.bookInfoWindow {
+   @include custom-flex(row, center, center);
+   background: rgba(0, 0, 0, 0.5);
+   height: 100vh;
+   position: absolute;
+   width: 100vw;
+   z-index: 1;
+}
+.bookInfo {
+   @include custom-flex(column, center, center);
+   background: #F5F6F8;
+   border: 1px solid #414141;
+   border-radius: 1.5vw;
+   height: 50vh;
+   padding: 1vw 1vw 3vw 1vw;
+   width: 75vw;
+}
+.bookInfoTop {
+   height: 10%;
+   width: 100%;
+}
+.bookCloseButton {
+   float: right;
+   height: 100%;
+   transition: 0.25s;
+}
+.bookInfoBottom {
+   @include custom-flex(row, center, center);
+   height: 90%;
+   width: 100%;
+}
+.bookInfoImage {
+   height: 80%;
+   margin: 0 3vw;
+}
+.bookInfoDetail {
+   @include custom-flex(column, none, space-evenly);
+   font-size: 1vw;
+   height: 100%;
+   margin: 1vw;
+   width: 100%;
 }
