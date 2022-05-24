@@ -1,15 +1,16 @@
-export default function Button({ fontSize, name, padding, width }) {
+export default function Button({ background, color, fontSize, margin, name, padding, width }) {
    return(
       <button style={{ 
-         background: "#6379F4", 
+         background: background || "#6379F4", 
          borderRadius: "0.25vw", 
-         color: "white", 
-         fontSize, 
+         color: color || "white", 
+         fontSize: fontSize || "0.8vw", 
          fontWeight: "bold", 
+         margin,
          padding, 
          width 
       }}>
-         { name }
+         { name || "Button" }
       </button>
    )
 }

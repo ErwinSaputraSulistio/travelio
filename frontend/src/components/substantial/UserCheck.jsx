@@ -14,7 +14,7 @@ export default function userCheck({ switchCreate }) {
          <span className="landingPageInfo">please enter your Username first.</span>
          {/* INPUT & BUTTON */}
          <input className="landingPageInputUsername" name="inputUsername" placeholder="Input your username here" required type="text"/>
-         <Button 
+         <Button
             fontSize="0.8vw" 
             name="CHECK IN" 
             padding="0.8vw" 

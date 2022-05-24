@@ -14,11 +14,11 @@ body {
    font-family: "Poppins";
    margin: 0;
 }
-button, .createUsername {
+button, .createUsername, .searchLogo {
    border: none;
    transition: 0.25s;
 }
-button:hover, .createUsername:hover {
+button:hover, .createUsername:hover, .searchLogo:hover {
    cursor: pointer;
    opacity: 0.5;
 }
@@ -32,6 +32,34 @@ input:focus {
    @include custom-flex(row, center, center);
    height: 100vh;
    width: 100vw;
+}
+
+// NAVBAR
+.navbar {
+   @include custom-flex(row, center, space-between);
+   background: #6379F4;
+   border-radius: 0 0 1.5vw 1.5vw;
+   box-shadow: 0 0 1vw 0 #6379F4;
+   position: absolute;
+   width: 100%;
+   z-index: 1;
+}
+.searchArea {
+   @include custom-flex(row, center, space-between);
+}
+.searchInput {
+   border: 1px solid rgb(33, 50, 102);
+   border-radius: 0.25vw;
+   font-size: 0.8vw;
+   font-weight: 0.8vw;
+   padding: 0.5vw 1vw;
+   width: 15vw;
+}
+.searchLogo {
+   filter: brightness(0) invert(1);
+   height: 1.5vw;
+   margin: 0 3vw 0 1.5vw;
+   width: 1.5vw;
 }
 
 // LANDING PAGE
