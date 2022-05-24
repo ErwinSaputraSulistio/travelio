@@ -16,10 +16,11 @@ export default function Navbar() {
    const searchBookTitle = (e) => {
       axios.get("https://www.googleapis.com/books/v1/volumes?q=" + e.target[0].value)
       .then((result) => {
-         console.log(result.data.items)
+         // console.log(result.data.items)
          dispatch(searchBook(result.data.items))
       })
       e.preventDefault()
+      navigate("/home")
    }
    return(
       <div className="navbar">
@@ -30,9 +31,9 @@ export default function Navbar() {
                name="Home"
             />
             <Button
-               func={ () => { navigate("/bookmark") } }
+               func={ () => { navigate("/wishlist") } }
                margin="1.5vw" 
-               name="My Bookmark"
+               name="My Favourite"
             />
          </div>
          <form className="searchArea" onSubmit={ (e) => { searchBookTitle(e) } }>

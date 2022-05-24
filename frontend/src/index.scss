@@ -146,6 +146,7 @@ input:focus {
    transition: 0.25s;
    width: 80%;
 }
+// BOOK INFO
 .bookInfoWindow {
    @include custom-flex(row, center, center);
    background: rgba(0, 0, 0, 0.5);
@@ -187,4 +188,11 @@ input:focus {
    height: 100%;
    margin: 1vw;
    width: 100%;
+}
+.bookRating {
+   @include custom-flex(row, center, none);
+}
+// RATING STAR
+.ratingStarSize > span {
+   font-size: 2vw !important;
 }

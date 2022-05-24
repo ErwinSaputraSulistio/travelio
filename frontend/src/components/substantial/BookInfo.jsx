@@ -1,4 +1,6 @@
-export default function BookInfo({ author, close, img, publisher, title }) {
+import StarsRating from "stars-rating"
+
+export default function BookInfo({ author, close, img, publisher, rating, title }) {
    return(
 		<div className="bookInfoWindow">
 			<div className="bookInfo">
@@ -17,10 +19,23 @@ export default function BookInfo({ author, close, img, publisher, title }) {
 						src={ img || "https://cdn-d8.nypl.org/s3fs-public/blogs/J5LVHEL.jpg" }
 					/>
 					<div className="bookInfoDetail">
-						<span><b>Title</b> : { title || "-" }</span>
-						<span><b>Author</b> : { author || "-" }</span>
-						<span><b>Publisher</b> : { publisher || "-" }</span>
-						<span><b>Rating</b> :</span>
+						<span><b className="bookInfoDetailLeft">Title : </b>{ title || "-" }</span>
+						<span><b className="bookInfoDetailLeft">Author : </b>{ author || "-" }</span>
+						<span><b className="bookInfoDetailLeft">Publisher : </b>{ publisher || "-" }</span>
+						<span className="bookRating">
+							<b className="bookInfoDetailLeft">Rating : </b>
+							{ 
+							rating === undefined ?
+							"-"
+							:
+							<StarsRating
+								className={ "ratingStarSize" }
+								count={ 5 }
+								edit={ false }
+								value={ rating }
+							/> 
+							}
+						</span>
 					</div>
 				</div>
 			</div>

@@ -4,7 +4,9 @@ export default function Bookmark() {
    return(
       <div>
          <Navbar/>
-         <div className="container"></div>
+         <div className="container">
+            My Wishlist
+         </div>
       </div>
    )
 }

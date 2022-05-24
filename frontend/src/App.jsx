@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { Bookmark, Home, Landing, NotFound } from "./pages"
+import { Home, Landing, NotFound, Wishlist } from "./pages"
 // REDUX
 import { store } from './app/store'
 import { Provider } from 'react-redux'
@@ -11,7 +11,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={ <Landing/> }/>
           <Route path="/home" element={ <Home/> }/>
-          <Route path="/bookmark" element={ <Bookmark/> }/>
+          <Route path="/wishlist" element={ <Wishlist/> }/>
           <Route path="*" element={ <NotFound/> }/>
         </Routes>
       </BrowserRouter>
