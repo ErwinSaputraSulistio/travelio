@@ -1,0 +1,99 @@
+// IMPORTS
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+// MIXINS
+@mixin custom-flex($flex-direction, $align-items, $justify-content) {
+   align-items: $align-items;
+   display: flex;
+   flex-direction: $flex-direction;
+   justify-content: $justify-content;
+}
+
+// CLASSES
+body {
+   font-family: "Poppins";
+   margin: 0;
+}
+button, .createUsername {
+   border: none;
+   transition: 0.25s;
+}
+button:hover, .createUsername:hover {
+   cursor: pointer;
+   opacity: 0.5;
+}
+input {
+   border: none;
+}
+input:focus {
+   outline: none;
+}
+.container {
+   @include custom-flex(row, center, center);
+   height: 100vh;
+   width: 100vw;
+}
+
+// LANDING PAGE
+.landingPageLeft {
+   background: url("https://img.freepik.com/free-vector/people-studying-learning-room_74855-6615.jpg?w=2000");
+   background-size: cover;
+   height: 100%;
+   width: 60%;
+}
+.landingPageLeftLayer {
+   @include custom-flex(column, center, center);
+   background: rgba(33, 50, 102, 0.8);
+   height: 100%;
+   width: 100%;
+}
+.landingPageQuote {
+   color: #D7D7D7;
+   font-size: 2vw;
+   font-weight: bold;
+}
+.landingPageQuoteOwner {
+   color: #D7D7D7;
+   font-size: 1vw;
+}
+.landingPageRight {
+   @include custom-flex(column, center, center);
+   height: 100%;
+   width: 40%;
+}
+.landingPageWelcome {
+   margin-bottom: 3vw;
+   width: 30%;
+}
+.landingPageInfo {
+   font-size: 0.8vw;
+}
+.landingPageInputUsername {
+   border: 0.1vw solid #6379F4;
+   border-radius: 0.25vw;
+   margin: 1vw 0;
+   padding: 1vw;
+   font-size: 1vw;
+   width: 50%;
+}
+.orBorder {
+   @include custom-flex(row, center, center);
+   border-top: 1px solid black;
+   margin: 3vw 0 1vw 0;
+   width: 55%;
+}
+.orText {
+   background: white;
+   font-size: 0.8vw;
+   font-weight: bold;
+   margin-top: -0.6vw;
+   text-align: center;
+   width: 3vw;
+}
+.dontHaveUsername {
+   font-size: 0.8vw;
+}
+.createUsername {
+   color: #6379F4;
+   font-weight: bold;
+}
