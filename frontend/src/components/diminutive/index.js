@@ -1,3 +1,4 @@
 import Button from "./Button"
+import Favorite from "./Favorite"
 
-export { Button }
+export { Button, Favorite }

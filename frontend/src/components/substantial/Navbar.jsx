@@ -43,7 +43,7 @@ export default function Navbar() {
             <Button
                func={ () => { navigate("/wishlist") } }
                margin="1.5vw" 
-               name="My Favourite"
+               name="My Wishlist"
             />
          </div>
          <form className="searchArea" onSubmit={ (e) => { searchBookTitle(e) } }>

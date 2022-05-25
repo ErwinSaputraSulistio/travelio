@@ -30,7 +30,10 @@ button, .createUsername, .searchLogo {
    border: none;
    transition: 0.25s;
 }
-button:hover, .createUsername:hover, .searchLogo:hover, .bookResultCover:hover, .bookCloseButton:hover {
+// ON HOVER EFFECT
+button:hover, .createUsername:hover, .searchLogo:hover, 
+.bookResultCover:hover, .bookCloseButton:hover, .favoriteRemove:hover, 
+.paginationButton:hover {
    cursor: pointer;
    opacity: 0.5;
 }
@@ -183,8 +186,12 @@ input:focus {
    height: 10%;
    width: 100%;
 }
-.bookCloseButton {
+.bookInfoTopRight {
+   @include custom-flex(row, center, none);
    float: right;
+   height: 100%;
+}
+.bookCloseButton {
    height: 100%;
    transition: 0.25s;
 }
@@ -210,4 +217,52 @@ input:focus {
 // RATING STAR
 .ratingStarSize > span {
    font-size: 2vw !important;
+}
+
+// WISHLIST
+.wishList {
+   @include custom-flex(column, center, space-between);
+   border: 1px solid #9F9F9F;
+   border-radius: 0.5vw;
+   padding: 1.5vw;
+   height: 60%;
+   width: 40%;
+}
+.myWishList {
+   font-size: 1.5vw;
+   font-weight: bold;
+   margin-bottom: 1.5vw;
+   text-align: center;
+   text-decoration: underline;
+}
+.favorite {
+   @include custom-flex(row, center, space-between);
+   border: 1px solid #414141;
+   border-radius: 0.25vw;
+   font-size: 1vw;
+   margin: 1.5vw 0;
+   padding: 0.5vw 1vw;
+}
+.favoriteRemove {
+   color: indianred;
+   font-size: 0.8vw;
+   font-weight: bold;
+}
+.pagination {
+   @include custom-flex(row, center, center);
+}
+.paginationButton {
+   border: 1px solid #414141;
+   border-radius: 0.5vw;
+   font-size: 0.8vw;
+   font-weight: bold;
+   margin: 0 0.5vw;
+   padding: 0.5vw;
+   text-align: center;
+   transition: 0.25s;
+   width: 1.3vw;
+}
+.paginationArrow {
+   background: #6379F4;
+   color: white;
 }

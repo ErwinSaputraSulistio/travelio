@@ -75,6 +75,7 @@ export default function Home() {
                <BookInfo 
                   author={ bookResult[bookIndex].volumeInfo.authors }
                   close={ () => { selectBook(null) } }
+                  id={ bookResult[bookIndex].id }
                   img={ bookResult[bookIndex].volumeInfo.imageLinks?.thumbnail }
                   publisher={ bookResult[bookIndex].volumeInfo.publisher }
                   rating={ bookResult[bookIndex].volumeInfo.averageRating }
