@@ -1,8 +1,15 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { UserCheck, UserCreate } from "../components/substantial"
 
 export default function Landing() {
+   // REACT HOOKS
+   const navigate = useNavigate()
    const [isCreate, changeIsCreateState] = useState(false)
+   useEffect(() => {
+      if(localStorage.getItem("reader") !== null) { navigate("/home") }
+   }, [])
+   // FUNCTIONS
    const switchTrigger = () => {
       changeIsCreateState(!isCreate)
    }

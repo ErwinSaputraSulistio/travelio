@@ -1,4 +1,4 @@
-const { createUser, checkUser } = require("../models")
+const { createUser, checkUser, updateWishlist } = require("../models")
 const { success, failed } = require("../helpers/result")
 
 class userController {
@@ -15,9 +15,16 @@ class userController {
       const { username } = req.body
       checkUser(username)
       .then((data) => {
-         if(data?.username === username) { success(res, "Login successful,", data) }
+         if(data?.username === username) { success(res, "Login successful!", data) }
          else { failed(res, 500, "Can't find user with this name, shall we create one?") }
       })
+      .catch((err) => { failed(res, err.code, err.message) })
+   }
+   static wishlist = (req, res) => {
+      const { username, wishlist } = req.body
+      const arrayStringify = wishlist.toString()
+      updateWishlist(username, "ARRAY[" + arrayStringify + "]")
+      .then(() => { success(res, "Successfully update this user wishlist!", { username, wishlist }) })
       .catch((err) => { failed(res, err.code, err.message) })
    }
 }

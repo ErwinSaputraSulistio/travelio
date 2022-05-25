@@ -19,6 +19,12 @@ class userModel {
          queryDB(resolve, reject, loginQuery)
       })
    }
+   static updateWishlist = (username, wishlist) => {
+      const wishlistQuery = "UPDATE users SET wishlist = " + wishlist + " WHERE username = '" + username + "';"
+      return new Promise((resolve, reject) => {
+         queryDB(resolve, reject, wishlistQuery)
+      })
+   }
 }
 
 module.exports = userModel
