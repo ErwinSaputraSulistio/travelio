@@ -1,8 +1,23 @@
+import axios from "axios"
+import Swal from "sweetalert2"
 import Button from "../diminutive/Button"
+// REDUX
 
 export default function userCreate({ switchCreate }) {
+   const goCreate = (e) => {
+      axios.post("http://localhost:8000/v1/create", { username: e.target[0].value })
+      .then(() => { 
+         Swal.fire("Created!", "Successfully create a new Username!", "success")
+         .then(() => { switchCreate() })
+      })
+      .catch((error) => {
+         const errRes = error.response.data
+         Swal.fire(errRes.status, "This username is already exists!", "error")
+      })
+      e.preventDefault()
+   }
    return(
-      <form className="landingPageRight">
+      <form className="landingPageRight" onSubmit={ (e) => { goCreate(e) } }>
          {/* WELCOME IMAGE */}
          <img 
             alt="welcome" 

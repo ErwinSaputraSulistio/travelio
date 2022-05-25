@@ -1,9 +1,24 @@
+const { createUser, checkUser } = require("../models")
+const { success, failed } = require("../helpers/result")
+
 class userController {
-   static checkIn = async(req, res) => {
-      res.status(200).json({
-         status: "--> OK.",
-         message: "Thanks, Erwin."
+   static register = (req, res) => {
+      const { username } = req.body
+      if(!username) { failed(res, 400, "Username can't be empty!") }
+      else {
+         createUser(username)
+         .then(() => { success(res, "Username creation success, now try to check-in!", { username }) })
+         .catch((err) => { failed(res, err.code, err.message) })
+      }
+   }
+   static login = (req, res) => {
+      const { username } = req.body
+      checkUser(username)
+      .then((data) => {
+         if(data?.username === username) { success(res, "Login successful,", data) }
+         else { failed(res, 500, "Can't find user with this name, shall we create one?") }
       })
+      .catch((err) => { failed(res, err.code, err.message) })
    }
 }
 

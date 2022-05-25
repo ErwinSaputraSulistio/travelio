@@ -1,7 +1,7 @@
 export default function Button({ background, color, fontSize, func, margin, name, padding, width }) {
    return(
       <button
-         onClick={ () => { func() || console.log("No function found!") } } 
+         onClick={ () => { func === undefined ? console.log(name) : func() } } 
          style={{ 
             background: background || "#6379F4", 
             borderRadius: "0.25vw", 

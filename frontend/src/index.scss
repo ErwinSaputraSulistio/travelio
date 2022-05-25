@@ -9,6 +9,18 @@
    justify-content: $justify-content;
 }
 
+// ANIMATIONS
+@keyframes zoomIn {
+   0% {
+      opacity: 0;
+      transform: scale(0);
+   }
+   100% {
+      opacity: 1;
+      transform: scale(1);
+   }
+}
+
 // CLASSES
 body {
    font-family: "Poppins";
@@ -46,6 +58,7 @@ input:focus {
 }
 .searchArea {
    @include custom-flex(row, center, space-between);
+   margin-left: -10vw;
 }
 .searchInput {
    border: 1px solid rgb(33, 50, 102);
@@ -53,7 +66,7 @@ input:focus {
    font-size: 0.8vw;
    font-weight: 0.8vw;
    padding: 0.5vw 1vw;
-   width: 15vw;
+   transition-duration: 0.5s;
 }
 .searchLogo {
    filter: brightness(0) invert(1);
@@ -157,6 +170,7 @@ input:focus {
 }
 .bookInfo {
    @include custom-flex(column, center, center);
+   animation: zoomIn 0.25s;
    background: #F5F6F8;
    border: 1px solid #414141;
    border-radius: 1.5vw;
